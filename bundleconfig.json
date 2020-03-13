@@ -5,11 +5,7 @@
   },
   {
     "outputFileName": "wwwroot/js/site.min.js",
-    "inputFiles": [
-      "wwwroot/js/site.js",
-      "wwwroot/js/Order/createOrder.js",
-      "wwwroot/js/Order/forwarderComponent.js"
-    ],
+    "inputFiles": ["wwwroot/js/site.js"],
     "minify": {
       "enabled": true,
       "renameLocals": true
