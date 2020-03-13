@@ -1,0 +1,120 @@
+﻿@page
+@model LogisticOrderTracker.Pages.Logistics.Orders.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Order.ShipmentValue" class="control-label"></label>
+                <input asp-for="Order.ShipmentValue" class="form-control" />
+                <span asp-validation-for="Order.ShipmentValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.LoadingInstructions" class="control-label"></label>
+                <input asp-for="Order.LoadingInstructions" class="form-control" />
+                <span asp-validation-for="Order.LoadingInstructions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.UnloadingInstructions" class="control-label"></label>
+                <input asp-for="Order.UnloadingInstructions" class="form-control" />
+                <span asp-validation-for="Order.UnloadingInstructions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.LoadingReferences" class="control-label"></label>
+                <input asp-for="Order.LoadingReferences" class="form-control" />
+                <span asp-validation-for="Order.LoadingReferences" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.UnloadingReferences" class="control-label"></label>
+                <input asp-for="Order.UnloadingReferences" class="form-control" />
+                <span asp-validation-for="Order.UnloadingReferences" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.ShipmentReady" class="control-label"></label>
+                <input asp-for="Order.ShipmentReady" class="form-control" />
+                <span asp-validation-for="Order.ShipmentReady" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.ShipmentArriving" class="control-label"></label>
+                <input asp-for="Order.ShipmentArriving" class="form-control" />
+                <span asp-validation-for="Order.ShipmentArriving" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.DriverPhone" class="control-label"></label>
+                <input asp-for="Order.DriverPhone" class="form-control" />
+                <span asp-validation-for="Order.DriverPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.TruckNumber" class="control-label"></label>
+                <input asp-for="Order.TruckNumber" class="form-control" />
+                <span asp-validation-for="Order.TruckNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.Incoterms" class="control-label"></label>
+                <select asp-for="Order.Incoterms" class="form-control"></select>
+                <span asp-validation-for="Order.Incoterms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.TransportType" class="control-label"></label>
+                <select asp-for="Order.TransportType" class="form-control"></select>
+                <span asp-validation-for="Order.TransportType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Order.SentToForwarder" /> @Html.DisplayNameFor(model => model.Order.SentToForwarder)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Order.PaidForwarder" /> @Html.DisplayNameFor(model => model.Order.PaidForwarder)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Order.ArrivedToWarehouse" /> @Html.DisplayNameFor(model => model.Order.ArrivedToWarehouse)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Order.CMR" /> @Html.DisplayNameFor(model => model.Order.CMR)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Order.POD" /> @Html.DisplayNameFor(model => model.Order.POD)
+                    </label>
+                </div>
+            </div>
+            <input type="hidden" asp-for="Order.Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

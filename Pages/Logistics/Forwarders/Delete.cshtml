@@ -1,0 +1,46 @@
+﻿@page
+@model LogisticOrderTracker.Pages.Logistics.Forwarders.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Forwarder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Forwarder.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Forwarder.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Forwarder.CreatedAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Forwarder.CreatedAt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Forwarder.UpdatedAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Forwarder.UpdatedAt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Forwarder.Active)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Forwarder.Active)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Forwarder.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,127 @@
+﻿@page
+@model LogisticOrderTracker.Pages.Logistics.Orders.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ShipmentValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.ShipmentValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.LoadingInstructions)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.LoadingInstructions)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.UnloadingInstructions)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.UnloadingInstructions)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.LoadingReferences)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.LoadingReferences)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.UnloadingReferences)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.UnloadingReferences)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ShipmentReady)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.ShipmentReady)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ShipmentArriving)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.ShipmentArriving)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.DriverPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.DriverPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.TruckNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.TruckNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Incoterms)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.Incoterms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.TransportType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.TransportType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.SentToForwarder)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.SentToForwarder)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.PaidForwarder)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.PaidForwarder)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ArrivedToWarehouse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.ArrivedToWarehouse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.CMR)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.CMR)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.POD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.POD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.CreatedAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.CreatedAt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.UpdatedAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.UpdatedAt)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Order.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
