@@ -9,142 +9,21 @@
 <hr />
 
 <div class="row">
-    <div class="col-md-6">
-        <h3>Sender</h3>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="form-group">
-            <label asp-for="@Model.SenderId" class="control-label"></label>
-            <select asp-for="@Model.SenderId" class="form-control" asp-items="Model.Addresses"></select>
-            <span asp-validation-for="@Model.SenderId" class="text-danger"></span>
-        </div>
-
-        <div class="well well-sm" id="sender-well">
-
-        </div>
-
-    </div>
-
-    <div class="col-md-6">
-        <h3>Receiver</h3>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="form-group">
-            <label asp-for="@Model.ReceiverId" class="control-label"></label>
-            <select asp-for="@Model.ReceiverId" class="form-control" asp-items="Model.Addresses"></select>
-            <span asp-validation-for="@Model.ReceiverId" class="text-danger"></span>
-        </div>
-
-        <div class="well well-sm" id="receiver-well"></div>
-    </div>
-
-
-    <div class="col-md-4">
-        <h3>Order</h3>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="form-group">
-            <label asp-for="Order.ShipmentReady" class="control-label"></label>
-            <input asp-for="Order.ShipmentReady" class="form-control" />
-            <span asp-validation-for="Order.ShipmentReady" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Order.ShipmentArriving" class="control-label"></label>
-            <input asp-for="Order.ShipmentArriving" class="form-control" />
-            <span asp-validation-for="Order.ShipmentArriving" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="@Model.ProductManagerId" class="control-label"></label>
-            <select asp-for="@Model.ProductManagerId" class="form-control" asp-items="Model.ProductManagers"></select>
-            <span asp-validation-for="@Model.ProductManagerId" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Order.Incoterms" class="control-label"></label>
-            <select asp-for="Order.Incoterms" class="form-control" asp-items="Html.GetEnumSelectList<LogisticOrderTracker.Models.Incoterms>()"></select>
-            <span asp-validation-for="Order.Incoterms" class="text-danger"></span>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <h3>Forwarder</h3>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="form-group">
-            <label asp-for="@Model.ForwarderId" class="control-label"></label>
-            <select asp-for="@Model.ForwarderId" class="form-control" asp-items="Model.Forwarders"></select>
-            <span asp-validation-for="@Model.ForwarderId" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Order.DriverPhone" class="control-label"></label>
-            <input asp-for="Order.DriverPhone" class="form-control" />
-            <span asp-validation-for="Order.DriverPhone" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Order.TruckNumber" class="control-label"></label>
-            <input asp-for="Order.TruckNumber" class="form-control" />
-            <span asp-validation-for="Order.TruckNumber" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Order.TransportType" class="control-label"></label>
-            <select asp-for="Order.TransportType" class="form-control" asp-items="Html.GetEnumSelectList<LogisticOrderTracker.Models.TransportType>()"></select>
-            <span asp-validation-for="Order.TransportType" class="text-danger"></span>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <h3>Shipment</h3>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="form-group">
-            <label asp-for="Order.ShipmentValue" class="control-label"></label>
-            <input asp-for="Order.ShipmentValue" class="form-control" />
-            <span asp-validation-for="Order.ShipmentValue" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Order.LoadingInstructions" class="control-label"></label>
-            <textarea  asp-for="Order.LoadingInstructions" type="text" class="form-control" rows="4" style="resize: none;" ></textarea>
-            <span asp-validation-for="Order.LoadingInstructions" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Order.UnloadingInstructions" class="control-label"></label>
-            <textarea  asp-for="Order.UnloadingInstructions" class="form-control" rows="4"  style="resize: none;"></textarea>
-            <span asp-validation-for="Order.UnloadingInstructions" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Order.LoadingReferences" class="control-label"></label>
-            <input asp-for="Order.LoadingReferences" class="form-control" />
-            <span asp-validation-for="Order.LoadingReferences" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Order.UnloadingReferences" class="control-label"></label>
-            <input asp-for="Order.UnloadingReferences" class="form-control" />
-            <span asp-validation-for="Order.UnloadingReferences" class="text-danger"></span>
-        </div>
-    </div>
-
-    <div class="col-md-12">
-        <h3>Goods</h3>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+  <div id="app">
+    <sender-comp></sender-comp>
+    <receiver-comp></receiver-comp>
+    <order-comp></order-comp>
+    <forwarder-comp></forwarder-comp>
+    <shipment-comp></shipment-comp>
+  </div>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <div class="form-group">
-            <input type="submit" id="submit-order" value="Create" class="btn btn-default" />
-        </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <input type="submit" id="submit-order" value="Create" class="btn btn-default" />
     </div>
+  </div>
 </div>
 
 <div>
