@@ -5,6 +5,10 @@ body {
   padding-bottom: 20px;
 }
 
+.contact-select {
+  cursor: pointer;
+}
+
 textarea {
   resize: none;
 }

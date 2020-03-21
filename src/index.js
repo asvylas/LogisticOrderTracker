@@ -1,17 +1,15 @@
 import Vue from "vue";
-import SenderComponent from "./components/senderComponent.vue";
-import ReceiverComponent from "./components/receiverComponent.vue";
-import ShipmentComponent from "./components/shipmentComponent.vue";
+import AddressComponent from "./components/addressComponent.vue";
 import OrderComponent from "./components/orderComponent.vue";
 import ForwarderComponent from "./components/forwarderComponent.vue";
+import ShipmentComponent from "./components/shipmentComponent.vue";
 
 new Vue({
   components: {
-    "sender-comp": SenderComponent,
-    "receiver-comp": ReceiverComponent,
-    "shipment-comp": ShipmentComponent,
+    "address-comp": AddressComponent,
     "order-comp": OrderComponent,
-    "forwarder-comp": ForwarderComponent
+    "forwarder-comp": ForwarderComponent,
+    "shipment-comp": ShipmentComponent
   },
   data() {
     return {
