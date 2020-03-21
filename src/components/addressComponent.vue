@@ -67,7 +67,6 @@
 
 <script>
 import HttpService from "../services/http.service";
-import httpService from "../services/http.service";
 export default {
   props: ["addressTitle"],
   data: function() {
