@@ -7,6 +7,13 @@ body {
 
 .contact-select {
   cursor: pointer;
+  margin: 10px;
+}
+
+div.active {
+  font-style: italic;
+  font-size: 14px;
+  box-shadow: 2px 5px #080808;
 }
 
 textarea {

@@ -10,11 +10,16 @@
 
 <div class="row">
   <div id="app">
-    <address-comp address-title="Sender"></address-comp>
-    <address-comp address-title="Receiver"></address-comp>
-    <order-comp></order-comp>
-    <forwarder-comp></forwarder-comp>
-    <shipment-comp></shipment-comp>
+    <div class="row">
+      <address-comp address-title="Sender" class="col-md-6"></address-comp>
+      <address-comp address-title="Receiver" class="col-md-6"></address-comp>
+    </div>
+    <div class="row">
+      <order-comp class="col-md-4"></order-comp>
+      <forwarder-comp class="col-md-4"></forwarder-comp>
+      <shipment-comp class="col-md-4"></shipment-comp>
+    </div>
+    
   </div>
 </div>
 
