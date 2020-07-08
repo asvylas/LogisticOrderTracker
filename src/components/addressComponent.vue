@@ -92,13 +92,19 @@ export default {
     getAddresses: function(event) {
       HttpService.getAll("addresses")
         .then(res => {
-          this.addresses = res.data;
-          this.addresses.forEach(element => {
-            element.contacts.forEach(e => {
-              e.clicked == false;
+          if (res.data.length > 0) {
+            this.addresses = res.data;
+            this.addresses.forEach(element => {
+              element.contacts.forEach(e => {
+                e.clicked == false;
+              });
             });
-          });
-          console.log(res.data);
+            this.selectedAddressId = this.addresses[0].id;
+            this.getAddressContacts();
+            console.log(res.data);
+          } else {
+            throw Error();
+          }
         })
         .catch(err => {
           console.log(err);

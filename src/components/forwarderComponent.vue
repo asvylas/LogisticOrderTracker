@@ -8,22 +8,21 @@
       <label asp-for="@Model.ForwarderId" class="control-label"
         >Forwarder</label
       >
-      <select name="" id="" class="form-control">
+      <select name="" id="" class="form-control" v-model="selectedForwarderId">
         <option
-          value=""
           v-for="forwarder in forwarders"
           v-bind:key="forwarder.id"
+          v-bind:value="forwarder.id"
           >{{ forwarder.name }}</option
         >
       </select>
-      <span asp-validation-for="@Model.ForwarderId" class="text-danger"></span>
     </div>
 
     <div class="form-group">
       <label asp-for="Order.DriverPhone" class="control-label"
         >Driver Phone</label
       >
-      <input asp-for="Order.DriverPhone" class="form-control" />
+      <input v-model="driverPhone" class="form-control" />
       <span asp-validation-for="Order.DriverPhone" class="text-danger"></span>
     </div>
 
@@ -31,7 +30,7 @@
       <label asp-for="Order.TruckNumber" class="control-label"
         >Truck Number</label
       >
-      <input asp-for="Order.TruckNumber" class="form-control" />
+      <input v-model="truckNumber" class="form-control" />
       <span asp-validation-for="Order.TruckNumber" class="text-danger"></span>
     </div>
 
@@ -40,10 +39,18 @@
         >Transport Type</label
       >
       <select
-        asp-for="Order.TransportType"
+        name=""
+        id=""
         class="form-control"
-        asp-items="Html.GetEnumSelectList<LogisticOrderTracker.Models.TransportType>()"
-      ></select>
+        v-model="selectedTransportTypeId"
+      >
+        <option
+          v-for="type in transportTypes"
+          v-bind:key="type.value"
+          v-bind:value="type.value"
+          >{{ type.key }}</option
+        >
+      </select>
       <span asp-validation-for="Order.TransportType" class="text-danger"></span>
     </div>
   </div>
@@ -56,7 +63,12 @@ export default {
     return {
       greeting: "Hello World",
       count: 0,
-      forwarders: []
+      driverPhone: "",
+      truckNumber: "",
+      forwarders: [],
+      transportTypes: [],
+      selectedForwarderId: 0,
+      selectedTransportTypeId: 0
     };
   },
   methods: {
@@ -64,7 +76,23 @@ export default {
       HttpService.getAll("forwarders")
         .then(res => {
           this.forwarders = res.data;
+          this.selectedForwarderId = this.forwarders[0].id;
           console.log(res.data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getTransportTypes: function() {
+      HttpService.getAll("general/transporttypes")
+        .then(res => {
+          if (res.data.length > 0) {
+            this.transportTypes = res.data;
+            this.selectedTransportTypeId = this.transportTypes[0].value;
+            console.log(this.transportTypes);
+          } else {
+            throw Error("No product managers found!");
+          }
         })
         .catch(err => {
           console.log(err);
@@ -73,6 +101,7 @@ export default {
   },
   mounted: function() {
     this.getForwarders();
+    this.getTransportTypes();
   }
 };
 </script>
